@@ -12,7 +12,7 @@ describe Van do
     broken_bike.break
     station.dock(bike)
     station.dock(broken_bike)
-    van.dock(station.release_broken_bikes)
+    van.collect_broken_bikes_from(station)
     expect(van.bike_count).to eq(1)
     expect(station.bike_count).to eq(1)
   end
