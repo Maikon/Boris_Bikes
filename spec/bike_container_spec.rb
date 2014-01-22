@@ -1,6 +1,6 @@
 require_relative '../lib/bike_container'
 
-# describing class container
+# defining class Container
 class ContainerHolder
   include BikeContainer
 
@@ -10,5 +10,19 @@ class ContainerHolder
 end
 
 describe BikeContainer do
+  let(:bike) { Bike.new }
+  let(:holder) { ContainerHolder.new(capacity: 20) }
 
+  it 'should be able to accept a bike' do
+    expect(holder.bike_count).to eq(0)
+    holder.dock(bike)
+    expect(holder.bike_count).to eq(1)
+  end
+
+  it 'should be able to release a bike' do
+    holder.dock(bike)
+    expect(holder.bike_count).to eq(1)
+    holder.release(bike)
+    expect(holder.bike_count).to eq(0)
+  end
 end
