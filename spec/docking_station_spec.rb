@@ -1,9 +1,9 @@
 require_relative '../lib/docking_station'
 
-describe DockingStation do 
+describe DockingStation do
 
   let(:bike) { Bike.new }
-  let(:station) { DockingStation.new(:capacity => 20) }
+  let(:station) { DockingStation.new(capacity: 20) }
 
   def fill_station(station)
     20.times { station.dock(Bike.new) }
@@ -29,10 +29,10 @@ describe DockingStation do
 
   it 'should not accept a bike if it\'s full' do
     fill_station(station)
-    expect( lambda { station.dock(bike) }).to raise_error(RuntimeError)
+    expect(-> { station.dock(bike) }).to raise_error(RuntimeError)
   end
 
-  it 'should provide the list of available bikes' do 
+  it 'should provide the list of available bikes' do
     working_bike, broken_bike = Bike.new, Bike.new
     broken_bike.break
     station.dock(working_bike)

@@ -1,6 +1,6 @@
+# defining BikeContainer module
 module BikeContainer
-
-DEFAULT_CAPACITY = 10
+  DEFAULT_CAPACITY = 10
 
   def bikes
     @bikes ||= []
@@ -19,7 +19,7 @@ DEFAULT_CAPACITY = 10
   end
 
   def dock(bike)
-    raise 'Station is Full!' if full?
+    fail 'Station is Full!' if full?
     bikes << bike
   end
 

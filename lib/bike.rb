@@ -1,5 +1,5 @@
+# defining Bike class
 class Bike
-
   def initialize
     fix
   end
