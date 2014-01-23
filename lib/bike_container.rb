@@ -43,5 +43,4 @@ module BikeContainer
     broken_bikes = station.bikes.select! { |bike| bike.broken? }
     broken_bikes.each { |bike| dock(bike) }
   end
-
 end
