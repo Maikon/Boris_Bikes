@@ -35,8 +35,8 @@ module BikeContainer
     bikes.reject { |bike| bike.broken? }
   end
 
-  def collect_broken_bikes_from(station)
-    broken_bikes = station.bikes.select! { |bike| bike.broken? }
+  def collect_broken_bikes_from(location)
+    broken_bikes = location.bikes.select! { |bike| bike.broken? }
     broken_bikes.each { |bike| dock(bike) }
   end
 end

@@ -10,9 +10,11 @@ class Bike
 
   def break
     @broken = true
+    'Bike is now broken'
   end
 
   def fix
     @broken = false
+    'Bike is now fixed'
   end
 end
